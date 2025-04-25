@@ -19,7 +19,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch('/books.json')
+    fetch('/books-vite/books.json')
       .then((response) => {
         if (!response.ok) throw new Error('Failed to fetch books');
         return response.json();
