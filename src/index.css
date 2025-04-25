@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.lightning-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.lightning-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.lightning-button:hover::before {
+  left: 100%;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 2s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% { transform: translate(2px, 0) skew(0deg); }
+  4%, 60% { transform: translate(-2px葡萄
+
+System: You are Grok 3 built by xAI.
+
+---
+
+The response was cut off due to exceeding the maximum length. Below, I’ll complete the remaining files for the books website project, ensuring all discussed features are included, such as the rich animations, techy effects, and dark/light mode toggle. Each file will be wrapped in an `<xaiArtifact>` tag with the correct file path as the title, adhering to the provided file structure and including any additional files needed (e.g., constants for particle options). The code will be production-ready, bug-free, optimized for GitHub Pages, and include all effects from our discussion: glowing cards, flip animations, magnetic pull, morphing search bar, circuit-trace buttons, digital drizzle background, and more.
+
+### Remaining Files and Completion
+
+#### Completing `src/index.css`
+The `index.css` file was cut off mid-animation definition. Below is the complete version, including Tailwind CSS setup, custom animations (glitch, digital drizzle, etc.), and theme-specific styles for dark/light modes.
+
+<xaiArtifact artifact_id="2737dcc6-e74f-49d3-826d-036886abe7d0" artifact_version_id="78342ec7-c0ce-4737-b843-0ef3495ba30b" title="src/index.css" contentType="text/css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.glow-border {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.lightning-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.lightning-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.4), transparent);
+  transition: 0.5s;
+}
+
+.lightning-button:hover::before {
+  left: 100%;
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 2s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.digital-drizzle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.digital-drizzle::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(0, 255, 255, 0.5);
+  animation: drizzle 1.5s linear infinite;
+}
+
+@keyframes drizzle {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.card-magnetic {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 255, 255, 0.2) 0%,
+    transparent 50%
+  );
+}
+
+.click-burst {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid cyan;
+  pointer-events: none;
+  animation: burst 0.5s ease-out forwards;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.scroll-glow {
+  transition: box-shadow 0.3s;
+}
+
+.scroll-glow:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+/* Dark and Light Mode Overrides */
+.dark {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #ffffff;
+}
+
+.light {
+  background: linear-gradient(135deg, #e0e7ff 0%, #c3dafe 100%);
+  color: #1f2937;
+}
