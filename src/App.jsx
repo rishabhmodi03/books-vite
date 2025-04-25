@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Particles from 'react-particles';
+import Particles from '@tsparticles/react';
 import { loadFull } from 'tsparticles';
 import BookCard from './components/BookCard';
 import SearchBar from './components/SearchBar';
@@ -105,7 +105,7 @@ const App = () => {
           onClick={toggleTheme}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          aria-label="Toggle theme"
+          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
           <motion.div
             animate={{ rotate: theme === 'dark' ? 0 : 180 }}
