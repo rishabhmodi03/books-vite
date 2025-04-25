@@ -94,7 +94,7 @@ const App = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 glitch">
-          Techy Books Library
+          Books Library
         </h1>
         <p className="text-lg text-cyan-300 dark:text-gray-600 mt-2">Dive into a futuristic reading experience</p>
       </motion.header>
